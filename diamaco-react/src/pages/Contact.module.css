@@ -1,0 +1,36 @@
+.contactSplit { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+
+.infoList { display: flex; flex-direction: column; gap: 16px; margin: 36px 0; }
+.infoItem {
+  display: flex; align-items: flex-start; gap: 16px; padding: 20px;
+  background: #141414; border: 1px solid #1E1E1E; border-radius: 4px;
+}
+.infoIcon {
+  width: 40px; height: 40px; border-radius: 4px;
+  background: rgba(204,34,34,0.18); border: 1px solid rgba(204,34,34,0.2);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.infoIcon svg { width: 18px; height: 18px; stroke: #CC2222; }
+.infoLabel { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #888; margin-bottom: 4px; }
+.infoValue { font-size: 0.9rem; font-weight: 500; color: #fff; transition: color 0.18s; text-decoration: none; }
+a.infoValue:hover { color: #CC2222; }
+
+.formFooter { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 32px; flex-wrap: wrap; }
+.formNote { font-size: 0.75rem; color: #888; }
+.successMsg {
+  padding: 16px 20px; background: rgba(204,34,34,0.1); border: 1px solid rgba(204,34,34,0.3);
+  border-radius: 4px; font-size: 0.9rem; color: #CC2222;
+}
+
+.faqList { display: flex; flex-direction: column; gap: 12px; }
+.faqItem {
+  background: #141414; border: 1px solid #1E1E1E; border-radius: 4px;
+  cursor: pointer; transition: border-color 0.2s;
+}
+.faqOpen { border-color: rgba(204,34,34,0.3); }
+.faqQ { padding: 24px 28px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.faqQ p { font-size: 0.95rem; font-weight: 600; }
+.faqIcon { color: #CC2222; font-size: 1.4rem; flex-shrink: 0; }
+.faqA { padding: 0 28px 24px; font-size: 0.88rem; color: #CCCCCC; line-height: 1.75; }
+
+@media (max-width: 1024px) { .contactSplit { grid-template-columns: 1fr; gap: 48px; } }

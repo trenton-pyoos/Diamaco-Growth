@@ -1,0 +1,22 @@
+.cursor {
+  width: 10px; height: 10px;
+  background: #CC2222;
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 99998;
+  transition: transform 0.1s ease;
+}
+.ring {
+  width: 36px; height: 36px;
+  border: 1px solid rgba(204,34,34,0.4);
+  border-radius: 50%;
+  position: fixed; top: 0; left: 0;
+  pointer-events: none; z-index: 99997;
+  transition: all 0.15s ease;
+}
+.cursor.hover { transform: scale(2) !important; }
+.ring.hover { transform: scale(1.5) !important; border-color: #CC2222; }
+
+@media (hover: none) {
+  .cursor, .ring { display: none; }
+}
