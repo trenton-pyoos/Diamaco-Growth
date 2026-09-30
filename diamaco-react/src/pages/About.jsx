@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import styles from './About.module.css'
 
 const values = [
@@ -26,6 +27,12 @@ const stats = [
 export default function About() {
   return (
     <>
+      <SEO
+        title="About Us | Built for South African Enterprise Growth | Diamaco Growth"
+        description="Meet Diamaco Growth. Founded to give growing South African enterprises the operational systems, commercial clarity, and digital infrastructure to scale profitably."
+        keywords="about diamaco growth, south african business consultants, business growth partners gauteng, enterprise scaling south africa"
+        canonical="https://www.diamacogrowth.co.za/about"
+      />
       {/* PAGE HERO */}
       <section className="page-hero">
         <div className="page-hero__bg" />

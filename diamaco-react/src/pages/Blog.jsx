@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import styles from './Blog.module.css'
 
 const categories = ['All', 'Automation', 'Marketing', 'Strategy', 'Compliance', 'Sales']
@@ -46,6 +47,12 @@ export default function Blog() {
 
   return (
     <>
+      <SEO
+        title="Growth Insights & Business Strategies | Diamaco Growth Knowledge Hub"
+        description="Actionable insights on scaling South African businesses, automating operations, optimizing CRM sales pipelines, and commercial compliance."
+        keywords="business insights south africa, sme growth tips, automation workflows guide, tender readiness guide, b-bbee compliance advice"
+        canonical="https://www.diamacogrowth.co.za/blog"
+      />
       <section className="page-hero">
         <div className="page-hero__bg" />
         <div className="container">

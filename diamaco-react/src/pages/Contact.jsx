@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import styles from './Contact.module.css'
 
 const contactItems = [
@@ -43,6 +44,19 @@ const faqs = [
   { q:'What industries do you specialise in?',          a:'We work across industries — construction, professional services, retail, healthcare, hospitality, logistics, and more. Our frameworks are industry-agnostic but we always invest time to understand your specific market.' },
   { q:'How do you measure success?',                   a:'We agree on clear KPIs at the start of every engagement — leads generated, conversion rates, time saved, revenue attributed, ranking improvements — and you receive transparent monthly reports.' },
 ]
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': faqs.map(item => ({
+    '@type': 'Question',
+    'name': item.q,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': item.a
+    }
+  }))
+}
 
 function FAQ({ q, a }) {
   const [open, setOpen] = useState(false)
@@ -127,6 +141,13 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact Us | Book a Free Strategy Session | Diamaco Growth"
+        description="Get in touch with Diamaco Growth. Schedule a free 30-minute consultation or reach us directly on 083 327 0056 or info@diamacogrowth.co.za in Johannesburg, South Africa."
+        keywords="contact diamaco growth, book strategy session, business consultants johannesburg, business growth partners gauteng"
+        canonical="https://www.diamacogrowth.co.za/contact"
+        schema={faqSchema}
+      />
       <section className="page-hero">
         <div className="page-hero__bg" />
         <div className="container">

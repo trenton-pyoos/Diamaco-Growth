@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import styles from './Home.module.css'
 
 /* ── Marquee items ── */
@@ -99,6 +100,12 @@ export default function Home() {
 
   return (
     <>
+      <SEO
+        title="Diamaco Growth | Business Growth Partners | Johannesburg, South Africa"
+        description="South Africa's premier business growth partner. We build automated workflows, CRM sales pipelines, high-converting websites, and commercial growth strategies."
+        keywords="business growth partners south africa, workflow automation johannesburg, crm setup gauteng, business development, digital marketing, website development gauteng, B-BBEE compliance guidance, Diamaco Growth"
+        canonical="https://www.diamacogrowth.co.za/"
+      />
       {/* ── HERO ── */}
       <section className={styles.hero}>
         <div className={styles.heroBg} />

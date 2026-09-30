@@ -1,0 +1,9 @@
+# robots.txt for Diamaco Growth
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.diamacogrowth.co.za
+
+# Sitemaps
+Sitemap: https://www.diamacogrowth.co.za/sitemap.xml

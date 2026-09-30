@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
+import SEO from '../components/SEO'
 import styles from './Services.module.css'
 
 const services = [
@@ -70,6 +71,12 @@ const marqueeItems = ['Workflow Automation','CRM Setup & Training','Website Deve
 export default function Services() {
   return (
     <>
+      <SEO
+        title="Our Services | Workflow Automation, CRM & Web Development | Diamaco Growth"
+        description="Explore Diamaco Growth's 10 core business services: Workflow Automation, CRM Pipeline Setup, WhatsApp Business Systems, Website Development, Lead Gen, and Tender Readiness."
+        keywords="business growth services south africa, workflow automation johannesburg, crm pipeline setup, whatsapp business automation, lead generation b2b, tender compliance south africa"
+        canonical="https://www.diamacogrowth.co.za/services"
+      />
       <section className="page-hero">
         <div className="page-hero__bg" />
         <div className="container">
