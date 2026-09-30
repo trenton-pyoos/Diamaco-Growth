@@ -60,11 +60,69 @@ function FAQ({ q, a }) {
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const [submittedName, setSubmittedName] = useState('')
+  const [submittedData, setSubmittedData] = useState(null)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
-    setTimeout(() => { setLoading(false); setSubmitted(true) }, 1500)
+    setError(null)
+
+    const form = e.target
+    const formData = new FormData(form)
+    const data = Object.fromEntries(formData.entries())
+
+    // Anti-spam botcheck honeypot
+    if (data.botcheck) {
+      setLoading(false)
+      setSubmitted(true)
+      return
+    }
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
+
+    try {
+      if (!accessKey || accessKey === 'YOUR_ACCESS_KEY_HERE') {
+        console.warn('Web3Forms: VITE_WEB3FORMS_ACCESS_KEY is not configured yet.')
+        setSubmittedName(data.firstName || '')
+        setSubmittedData(data)
+        setSubmitted(true)
+        return
+      }
+
+      const payload = {
+        access_key: accessKey,
+        subject: `New Diamaco Growth Consultation Enquiry - ${data.firstName} ${data.lastName} (${data.company || 'Direct'})`,
+        from_name: `${data.firstName} ${data.lastName} via Diamaco Website`,
+        replyto: data.email,
+        ...data,
+      }
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmittedName(data.firstName || '')
+        setSubmittedData(data)
+        setSubmitted(true)
+      } else {
+        setError(result.message || 'Unable to submit enquiry. Please try again or WhatsApp us directly.')
+      }
+    } catch (err) {
+      console.error('Submission error:', err)
+      setError('A network error occurred. Please try again or reach out on WhatsApp at 083 327 0056.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -126,10 +184,46 @@ export default function Contact() {
 
                 {submitted ? (
                   <div className={styles.successMsg}>
-                    ✓ Thank you! Your enquiry has been submitted. We'll be in touch within 1 business day.
+                    <div className={styles.successHeader}>
+                      <div className={styles.successIcon}>✓</div>
+                      <div>
+                        <h3 className={styles.successTitle}>Thank you{submittedName ? `, ${submittedName}` : ''}!</h3>
+                        <p className={styles.successText}>Your consultation enquiry has been submitted.</p>
+                      </div>
+                    </div>
+                    <p className={styles.successText}>
+                      We will review your requirements and reach out within <strong>1 business day</strong>. If you would like immediate feedback, feel free to connect with Trenton directly on WhatsApp.
+                    </p>
+                    <div className={styles.successActions}>
+                      <a
+                        href={submittedData ? `https://wa.me/27833270056?text=${encodeURIComponent(
+                          `Hi Trenton, I just submitted a consultation enquiry on the website:\n\nName: ${submittedData.firstName} ${submittedData.lastName}\nEmail: ${submittedData.email}\nPhone: ${submittedData.phone || 'N/A'}\nCompany: ${submittedData.company || 'N/A'}\nService: ${submittedData.service || 'N/A'}\nBudget: ${submittedData.budget || 'N/A'}\nMessage: ${submittedData.message || 'N/A'}`
+                        )}` : 'https://wa.me/27833270056'}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="btn btn--primary"
+                        style={{ padding: '10px 18px', fontSize: '0.85rem' }}
+                      >
+                        <span>Chat on WhatsApp</span>
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => { setSubmitted(false); setSubmittedData(null); }}
+                        className="btn btn--secondary"
+                        style={{ padding: '10px 18px', fontSize: '0.85rem' }}
+                      >
+                        <span>Send Another Enquiry</span>
+                      </button>
+                    </div>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} noValidate>
+                    <input type="hidden" name="botcheck" style={{ display: 'none' }} />
+                    {error && (
+                      <div className={styles.errorMsg}>
+                        <strong>Notice:</strong> {error}
+                      </div>
+                    )}
                     <div className="form-row">
                       <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
