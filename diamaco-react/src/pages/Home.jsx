@@ -170,13 +170,13 @@ export default function Home() {
           <div className={styles.aboutSplit}>
             <ScrollReveal className={styles.aboutVisual}>
               <div className={styles.aboutVisualMain}>
-                <div className={styles.aboutVisualInner}>
-                  <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-                    <rect width="80" height="80" rx="8" fill="rgba(204,34,34,0.08)" stroke="rgba(204,34,34,0.2)" strokeWidth="1"/>
-                    <path d="M24 54V36l16-12 16 12v18H44V42H36v12H24Z" fill="none" stroke="rgba(204,34,34,0.6)" strokeWidth="1.5" strokeLinejoin="round"/>
-                    <circle cx="40" cy="28" r="4" fill="#CC2222" opacity="0.7"/>
-                  </svg>
-                </div>
+                <img
+                  src="/about-partner.jpg"
+                  alt="Diamaco Growth Strategic Partner"
+                  className={styles.aboutImg}
+                  loading="lazy"
+                />
+                <div className={styles.aboutImgOverlay} />
               </div>
               <div className={styles.aboutAccent} />
               <div className={styles.aboutBadge}>
