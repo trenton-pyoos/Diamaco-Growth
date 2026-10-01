@@ -1,5 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Cursor from './components/Cursor'
@@ -34,6 +35,7 @@ export default function App() {
       <Footer />
       <WhatsAppButton />
       <StickyBar />
+      <Analytics />
     </>
   )
 }
