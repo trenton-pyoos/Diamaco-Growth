@@ -101,9 +101,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Diamaco Growth | Business Growth Partners | Johannesburg, South Africa"
-        description="South Africa's premier business growth partner. We build automated workflows, CRM sales pipelines, high-converting websites, and commercial growth strategies."
-        keywords="business growth partners south africa, workflow automation johannesburg, crm setup gauteng, business development, digital marketing, website development gauteng, B-BBEE compliance guidance, Diamaco Growth"
+        title="Diamaco Growth | Business Automation & Marketing, Secunda"
+        description="Secunda-based growth partner for SMEs in Mpumalanga & Gauteng. Workflow automation, CRM setup, websites and lead generation. Book a free automation audit."
+        keywords="business automation secunda, marketing agency secunda, crm setup mpumalanga, website design secunda, lead generation mpumalanga, workflow automation south africa, business consultant secunda, tender readiness mpumalanga, diamaco growth"
         canonical="https://www.diamacogrowth.co.za/"
       />
       {/* ── HERO ── */}

@@ -65,7 +65,7 @@ export default function Footer() {
             <ul>
               <li><a href="mailto:info@diamacogrowth.co.za">info@diamacogrowth.co.za</a></li>
               <li><a href="tel:+27833270056">+27 (0) 83 327 0056</a></li>
-              <li><a href="#">Johannesburg, South Africa</a></li>
+              <li><a href="#">Secunda, Mpumalanga, South Africa</a></li>
             </ul>
           </div>
         </div>

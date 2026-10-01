@@ -25,7 +25,7 @@ const contactItems = [
   },
   {
     label: 'Location',
-    value: 'Johannesburg, Gauteng, South Africa',
+    value: 'Secunda, Mpumalanga, South Africa',
     href: null,
     icon: <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="1.5"/><circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="1.5"/></svg>
   },
@@ -39,7 +39,7 @@ const contactItems = [
 
 const faqs = [
   { q:'How quickly can we get started?',               a:'After your initial consultation and scope agreement, most projects kick off within 5–7 business days. For urgent projects, we can often expedite. We\'ll give you a clear timeline during our discovery call.' },
-  { q:'Do you work with businesses outside Johannesburg?', a:'Absolutely. We work with clients across South Africa — Cape Town, Durban, Pretoria, and beyond — and even internationally. Most of our work is delivered remotely via video calls and collaboration tools.' },
+  { q:'Do you work with businesses outside Secunda?', a:'Absolutely. We work with clients across Mpumalanga, Gauteng, and the rest of South Africa — and even internationally. Most of our work is delivered remotely via video calls and collaboration tools.' },
   { q:'Can I hire you for just one service?',          a:'You can absolutely start with a single service. Many clients begin with one pain point — like a website or CRM — and expand as they see results. Our pricing is modular.' },
   { q:'What industries do you specialise in?',          a:'We work across industries — construction, professional services, retail, healthcare, hospitality, logistics, and more. Our frameworks are industry-agnostic but we always invest time to understand your specific market.' },
   { q:'How do you measure success?',                   a:'We agree on clear KPIs at the start of every engagement — leads generated, conversion rates, time saved, revenue attributed, ranking improvements — and you receive transparent monthly reports.' },
@@ -143,8 +143,8 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us | Book a Free Strategy Session | Diamaco Growth"
-        description="Get in touch with Diamaco Growth. Schedule a free 30-minute consultation or reach us directly on 083 327 0056 or info@diamacogrowth.co.za in Johannesburg, South Africa."
-        keywords="contact diamaco growth, book strategy session, business consultants johannesburg, business growth partners gauteng"
+        description="Get in touch with Diamaco Growth. Schedule a free 30-minute consultation or reach us directly on 083 327 0056 or info@diamacogrowth.co.za — based in Secunda, Mpumalanga."
+        keywords="contact diamaco growth, book strategy session, business consultants secunda, business growth partners mpumalanga, workflow automation secunda"
         canonical="https://www.diamacogrowth.co.za/contact"
         schema={faqSchema}
       />
