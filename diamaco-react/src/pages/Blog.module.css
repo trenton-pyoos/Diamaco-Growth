@@ -38,12 +38,48 @@
 /* Fixed image height — same on every card */
 .cardImg {
   width: 100%;
-  height: 180px;
-  background: linear-gradient(135deg,#1a1a1a,#222);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 200px;
+  position: relative;
+  overflow: hidden;
   flex-shrink: 0;
+}
+
+.cardImgPhoto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.card:hover .cardImgPhoto { transform: scale(1.06); }
+
+/* Gradient overlay darkens bottom for text readability */
+.cardImgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.15) 0%,
+    rgba(10,10,10,0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* Floating category badge on the image */
+.cardImgBadge {
+  position: absolute;
+  top: 12px;
+  left: 14px;
+  background: rgba(204,34,34,0.92);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
 }
 
 /* Card body grows to fill, pushing meta to bottom */

@@ -6,6 +6,20 @@ import BlogModal from '../components/BlogModal'
 import { BLOG_POSTS } from '../data/blogPosts'
 import styles from './Blog.module.css'
 
+import imgAutomation from '../assets/blog-automation.jpg'
+import imgSales      from '../assets/blog-sales.jpg'
+import imgCompliance from '../assets/blog-compliance.jpg'
+import imgMarketing  from '../assets/blog-marketing.jpg'
+import imgStrategy   from '../assets/blog-strategy.jpg'
+
+const CAT_IMAGES = {
+  Automation: imgAutomation,
+  Sales:      imgSales,
+  Compliance: imgCompliance,
+  Marketing:  imgMarketing,
+  Strategy:   imgStrategy,
+}
+
 const categories = ['All', 'Automation', 'Marketing', 'Strategy', 'Compliance', 'Sales']
 
 function PostCard({ post, onOpen }) {
@@ -25,12 +39,16 @@ function PostCard({ post, onOpen }) {
       style={{ cursor: 'pointer' }}
     >
       <div className={styles.cardImg}>
-        <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="rgba(204,34,34,0.5)" strokeWidth="1"/>
-        </svg>
+        <img
+          src={CAT_IMAGES[post.cat] || imgAutomation}
+          alt={post.cat}
+          className={styles.cardImgPhoto}
+        />
+        <div className={styles.cardImgOverlay} />
+        <span className={styles.cardImgBadge}>{post.cat}</span>
       </div>
       <div className={styles.cardBody}>
-        <span className={styles.tag}>{post.cat}</span>
+
         <h3 className={styles.cardTitle}>{post.title}</h3>
         <p className={styles.cardExcerpt}>{post.excerpt}</p>
         <div className={styles.cardMeta}>
