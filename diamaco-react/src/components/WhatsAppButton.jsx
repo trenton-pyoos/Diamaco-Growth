@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import styles from './WhatsAppButton.module.css'
 
-export default function WhatsAppButton() {
+export default function WhatsAppButton({ lifted = false }) {
   const [visible, setVisible] = useState(false)
   const [tooltip, setTooltip] = useState(true)
 
@@ -16,7 +16,7 @@ export default function WhatsAppButton() {
       href="https://wa.me/27833270056?text=Hi%2C%20I%27d%20like%20to%20find%20out%20more%20about%20Diamaco%20Growth%27s%20services."
       target="_blank"
       rel="noreferrer"
-      className={`${styles.btn} ${visible ? styles.visible : ''}`}
+      className={`${styles.btn} ${visible ? styles.visible : ''} ${lifted ? styles.lifted : ''}`}
       aria-label="Chat on WhatsApp"
     >
       {tooltip && (

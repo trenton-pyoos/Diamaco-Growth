@@ -1,5 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -16,9 +16,13 @@ import './App.css'
 
 export default function App() {
   const { pathname } = useLocation()
+  const [stickyVisible, setStickyVisible] = useState(false)
 
   // Scroll to top on route change
-  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    setStickyVisible(false)
+  }, [pathname])
 
   return (
     <>
@@ -33,8 +37,8 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
-      <WhatsAppButton />
-      <StickyBar />
+      <WhatsAppButton lifted={stickyVisible} />
+      <StickyBar onVisibilityChange={setStickyVisible} />
       <Analytics />
     </>
   )

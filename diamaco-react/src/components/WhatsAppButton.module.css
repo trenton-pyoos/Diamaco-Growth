@@ -14,7 +14,7 @@
   opacity: 0;
   pointer-events: none;
   transform: translateY(16px) scale(0.8);
-  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  transition: opacity 0.5s ease, transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), bottom 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s ease;
   cursor: pointer;
   text-decoration: none;
 }
@@ -22,6 +22,9 @@
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0) scale(1);
+}
+.btn.visible.lifted {
+  bottom: 96px;
 }
 .btn:hover {
   box-shadow: 0 12px 40px rgba(37, 211, 102, 0.5);
@@ -84,6 +87,7 @@
 @keyframes tooltipOut { from { opacity: 1; } to { opacity: 0; } }
 
 @media (max-width: 768px) {
-  .btn { bottom: 24px; right: 24px; width: 54px; height: 54px; }
+  .btn { bottom: 24px; right: 20px; width: 54px; height: 54px; }
+  .btn.visible.lifted { bottom: 130px; }
   .tooltip { display: none; }
 }
