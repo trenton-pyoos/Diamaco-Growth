@@ -29,6 +29,7 @@ export default function Navbar() {
     { to: '/',        label: 'Home'     },
     { to: '/about',   label: 'About'    },
     { to: '/services',label: 'Services' },
+    { to: '/#growth-audit', label: 'AI Audit' },
     { to: '/blog',    label: 'Insights' },
     { to: '/contact', label: 'Contact'  },
   ]
@@ -45,15 +46,26 @@ export default function Navbar() {
           <ul className={styles.links}>
             {links.map(({ to, label }) => (
               <li key={to}>
-                <NavLink
-                  to={to}
-                  end={to === '/'}
-                  className={({ isActive }) =>
-                    `${styles.link} ${isActive ? styles.active : ''}`
-                  }
-                >
-                  {label}
-                </NavLink>
+                {to.startsWith('/#') ? (
+                  <a
+                    href={to}
+                    className={styles.link}
+                    style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}
+                  >
+                    <span>{label}</span>
+                    <span style={{ fontSize: '0.6rem', background: '#CC2222', color: '#fff', padding: '1px 5px', borderRadius: 3, fontWeight: 700, letterSpacing: '0.05em' }}>AI</span>
+                  </a>
+                ) : (
+                  <NavLink
+                    to={to}
+                    end={to === '/'}
+                    className={({ isActive }) =>
+                      `${styles.link} ${isActive ? styles.active : ''}`
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                )}
               </li>
             ))}
           </ul>
@@ -78,17 +90,28 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div className={`${styles.mobile} ${menuOpen ? styles.mobileOpen : ''}`}>
-        {links.map(({ to, label }) => (
-          <NavLink
-            key={to}
-            to={to}
-            end={to === '/'}
-            className={({ isActive }) => `${styles.mobileLink} ${isActive ? styles.active : ''}`}
-            onClick={() => setMenuOpen(false)}
-          >
-            {label}
-          </NavLink>
-        ))}
+        {links.map(({ to, label }) =>
+          to.startsWith('/#') ? (
+            <a
+              key={to}
+              href={to}
+              className={styles.mobileLink}
+              onClick={() => setMenuOpen(false)}
+            >
+              {label} <span style={{ fontSize: '0.65rem', background: '#CC2222', color: '#fff', padding: '2px 6px', borderRadius: 4, marginLeft: 8 }}>AI</span>
+            </a>
+          ) : (
+            <NavLink
+              key={to}
+              to={to}
+              end={to === '/'}
+              className={({ isActive }) => `${styles.mobileLink} ${isActive ? styles.active : ''}`}
+              onClick={() => setMenuOpen(false)}
+            >
+              {label}
+            </NavLink>
+          )
+        )}
         <Link
           to="/contact"
           className={`btn btn--primary ${styles.mobileCta}`}

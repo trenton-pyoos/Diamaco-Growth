@@ -73,7 +73,7 @@ export default function Services() {
     <>
       <SEO
         title="Our Services | Workflow Automation, CRM & Web Development | Diamaco Growth"
-        description="Explore Diamaco Growth's 10 core business services: Workflow Automation, CRM Pipeline Setup, WhatsApp Business Systems, Website Development, Lead Gen, and Tender Readiness."
+        description="Explore Diamaco Growth's 10 core business services: Workflow Automation, CRM Pipeline Setup, WhatsApp Business Systems, Website Development, Lead Gen, and Tender Readiness. In person in Mpumalanga & Gauteng, digital nationwide."
         keywords="business growth services south africa, workflow automation johannesburg, crm pipeline setup, whatsapp business automation, lead generation b2b, tender compliance south africa"
         canonical="https://www.diamacogrowth.co.za/services"
       />

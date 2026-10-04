@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
 import SEO from '../components/SEO'
+import GrowthAudit from '../components/GrowthAudit'
 import styles from './Home.module.css'
 
 /* ── Marquee items ── */
@@ -101,9 +102,9 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Diamaco Growth | Business Automation & Marketing, Secunda"
-        description="Secunda-based growth partner for SMEs in Mpumalanga & Gauteng. Workflow automation, CRM setup, websites and lead generation. Book a free automation audit."
-        keywords="business automation secunda, marketing agency secunda, crm setup mpumalanga, website design secunda, lead generation mpumalanga, workflow automation south africa, business consultant secunda, tender readiness mpumalanga, diamaco growth"
+        title="Diamaco Growth | Business Automation & Marketing, South Africa"
+        description="Business automation, CRM, websites and lead generation for SMEs nationwide. On-site in Mpumalanga & Gauteng, delivered digitally in every other province. Book a free automation audit."
+        keywords="business automation south africa, marketing agency south africa, crm setup south africa, website design south africa, lead generation south africa, workflow automation south africa, business consultant south africa, tender readiness south africa, business automation mpumalanga, business automation gauteng, remote business consultant south africa, diamaco growth"
         canonical="https://www.diamacogrowth.co.za/"
       />
       {/* ── HERO ── */}
@@ -123,10 +124,11 @@ export default function Home() {
               Diamaco Growth helps South African businesses automate operations, build a powerful digital presence, and win more clients — with the hunger and focus that only a new company can bring.
             </p>
             <div className={styles.heroActions}>
-              <Link to="/contact" className="btn btn--primary"><span>Book a Free Strategy Call</span>
+              <a href="#growth-audit" className="btn btn--primary">
+                <span>Free AI Growth Audit</span>
                 <svg className={styles.arrow} viewBox="0 0 18 18" fill="none"><path d="M3 9h12M9 3l6 6-6 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
-              </Link>
-              <Link to="/services" className="btn btn--ghost"><span>See What We Do</span></Link>
+              </a>
+              <Link to="/contact" className="btn btn--ghost"><span>Book a Strategy Call</span></Link>
             </div>
           </div>
         </div>
@@ -246,6 +248,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── AI GROWTH & AUTOMATION AUDIT ── */}
+      <GrowthAudit />
 
       {/* ── PROCESS ── */}
       <section className={styles.processBg}>

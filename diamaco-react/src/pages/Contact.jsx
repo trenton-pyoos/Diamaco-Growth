@@ -24,12 +24,6 @@ const contactItems = [
     icon: <svg viewBox="0 0 24 24" fill="none"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
   },
   {
-    label: 'Location',
-    value: 'Secunda, Mpumalanga, South Africa',
-    href: null,
-    icon: <svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" strokeWidth="1.5"/><circle cx="12" cy="10" r="3" stroke="currentColor" strokeWidth="1.5"/></svg>
-  },
-  {
     label: 'Hours',
     value: 'Mon–Fri: 8:00–17:00 · Sat: 9:00–13:00',
     href: null,
@@ -39,7 +33,7 @@ const contactItems = [
 
 const faqs = [
   { q:'How quickly can we get started?',               a:'After your initial consultation and scope agreement, most projects kick off within 5–7 business days. For urgent projects, we can often expedite. We\'ll give you a clear timeline during our discovery call.' },
-  { q:'Do you work with businesses outside Secunda?', a:'Absolutely. We work with clients across Mpumalanga, Gauteng, and the rest of South Africa — and even internationally. Most of our work is delivered remotely via video calls and collaboration tools.' },
+  { q:'Where do you work — in person or remotely?', a:'We serve businesses nationwide. In Mpumalanga and Gauteng we offer in-person meetings, workshops and on-site delivery. For every other province in South Africa, we deliver everything digitally via video calls, WhatsApp and collaboration tools — with the same results and the same level of service.' },
   { q:'Can I hire you for just one service?',          a:'You can absolutely start with a single service. Many clients begin with one pain point — like a website or CRM — and expand as they see results. Our pricing is modular.' },
   { q:'What industries do you specialise in?',          a:'We work across industries — construction, professional services, retail, healthcare, hospitality, logistics, and more. Our frameworks are industry-agnostic but we always invest time to understand your specific market.' },
   { q:'How do you measure success?',                   a:'We agree on clear KPIs at the start of every engagement — leads generated, conversion rates, time saved, revenue attributed, ranking improvements — and you receive transparent monthly reports.' },
@@ -143,8 +137,8 @@ export default function Contact() {
     <>
       <SEO
         title="Contact Us | Book a Free Strategy Session | Diamaco Growth"
-        description="Get in touch with Diamaco Growth. Schedule a free 30-minute consultation or reach us directly on 083 327 0056 or info@diamacogrowth.co.za — based in Secunda, Mpumalanga."
-        keywords="contact diamaco growth, book strategy session, business consultants secunda, business growth partners mpumalanga, workflow automation secunda"
+        description="Get in touch with Diamaco Growth. Schedule a free 30-minute consultation or reach us directly on 083 327 0056 or info@diamacogrowth.co.za — serving businesses nationwide: in person in Mpumalanga & Gauteng, digitally in every other province."
+        keywords="contact diamaco growth, book strategy session, business consultants south africa, business growth partners south africa, workflow automation south africa, business consultants mpumalanga, business consultants gauteng, remote business consultants south africa"
         canonical="https://www.diamacogrowth.co.za/contact"
         schema={faqSchema}
       />

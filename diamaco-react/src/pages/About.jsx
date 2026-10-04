@@ -30,7 +30,7 @@ export default function About() {
       <SEO
         title="About Us | Built for South African Enterprise Growth | Diamaco Growth"
         description="Meet Diamaco Growth. Founded to give growing South African enterprises the operational systems, commercial clarity, and digital infrastructure to scale profitably."
-        keywords="about diamaco growth, south african business consultants, business growth partners gauteng, enterprise scaling south africa"
+        keywords="about diamaco growth, south african business consultants, business growth partners south africa, enterprise scaling south africa"
         canonical="https://www.diamacogrowth.co.za/about"
       />
       {/* PAGE HERO */}
