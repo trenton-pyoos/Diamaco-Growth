@@ -29,7 +29,7 @@ export default function Navbar() {
     { to: '/',        label: 'Home'     },
     { to: '/about',   label: 'About'    },
     { to: '/services',label: 'Services' },
-    { to: '/#growth-audit', label: 'AI Audit' },
+    { to: '/audit',   label: 'AI Audit' },
     { to: '/blog',    label: 'Insights' },
     { to: '/contact', label: 'Contact'  },
   ]
