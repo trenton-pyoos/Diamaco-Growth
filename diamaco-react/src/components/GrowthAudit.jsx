@@ -278,12 +278,42 @@ export default function GrowthAudit() {
   const monthlyValueRange = `${fmtZar(monthlyValueLow)} – ${fmtZar(monthlyValueHigh)}`
   const annualValueRange = `${fmtZar(annualValueLow)} – ${fmtZar(annualValueHigh)}`
 
-  // Growth Score (0 to 100)
-  const baseScore = 42
-  const bottleneckPenalty = selectedBottlenecks.length * 9
-  const stackScoreMap = { sheets: 5, basic: 10, partial: 16, scaling: 22 }
-  const stackBonus = stackScoreMap[stack] || 8
-  const growthReadinessScore = Math.min(Math.max(baseScore - bottleneckPenalty + stackBonus, 38), 78)
+  // ── Dynamic Growth Readiness Score (0 to 100) ──
+  // Evaluates tech stack foundation, bottleneck severity, team coordination friction, and revenue scale
+  const stackScoreMap = { sheets: -14, basic: -4, partial: 10, scaling: 24 }
+  const stackAdjustment = stackScoreMap[stack] ?? 0
+
+  const bottleneckWeights = {
+    lost_leads: 8,
+    whatsapp_delay: 8,
+    no_outreach: 7,
+    manual_admin: 6,
+    weak_website: 6,
+    tender_compliance: 5,
+  }
+  const bottleneckPenalty = selectedBottlenecks.reduce(
+    (sum, bId) => sum + (bottleneckWeights[bId] || 6),
+    0
+  )
+
+  const teamScoreMap = { solo: 6, '2-5': 2, '6-15': -4, '16-50': -8, '50+': -12 }
+  const teamAdjustment = teamScoreMap[teamSize] ?? 0
+
+  const revScoreMap = {
+    'sub-100k': -3,
+    '100k-350k': 2,
+    '350k-1m': 6,
+    '1m-3m': 10,
+    '3m+': 14,
+  }
+  const revAdjustment = revScoreMap[revenue] ?? 0
+
+  const rawScore = 52 + stackAdjustment - bottleneckPenalty + teamAdjustment + revAdjustment
+  const growthReadinessScore = Math.min(Math.max(rawScore, 22), 92)
+
+  // Primary bottleneck label for personalized contextual copy
+  const primaryBottleneckObj = chosenBottlenecks[0]
+  const primaryBottleneckName = primaryBottleneckObj ? primaryBottleneckObj.label : 'manual administrative friction'
 
   // Map chosen bottlenecks to Diamaco Solutions
   const recommendedSolutions = selectedBottlenecks.map((bId) => {
@@ -300,14 +330,82 @@ export default function GrowthAudit() {
     )
   }
 
-  // Pre-filled WhatsApp direct booking link
   const chosenIndustryLabel = INDUSTRIES.find((i) => i.id === industry)?.label || 'Our Business'
+
+  // Dynamic Diagnosis based on score and business profile
+  const getAuditDiagnosis = () => {
+    if (growthReadinessScore < 40) {
+      return {
+        tierPill: '🚨 Critical Manual Friction Detected',
+        heading: (
+          <>
+            Your Operations Are Constrained by <em>Severe Manual Drag</em>
+          </>
+        ),
+        text: (
+          <>
+            Based on your profile in <strong>{chosenIndustryLabel}</strong> with{' '}
+            <strong>{teamObj.label}</strong>, disjointed systems and {primaryBottleneckName.toLowerCase()} are causing substantial operational overhead. Recovering an estimated{' '}
+            <strong>{weeklyHoursRange} hours per week</strong> through automated workflows is your highest-leverage growth unlock.
+          </>
+        ),
+      }
+    } else if (growthReadinessScore < 58) {
+      return {
+        tierPill: '⚡ High Quick-Win Yield Potential',
+        heading: (
+          <>
+            Your Business Has Significant <em>Uncaptured Capacity</em>
+          </>
+        ),
+        text: (
+          <>
+            Your business in <strong>{chosenIndustryLabel}</strong> has established commercial traction, but{' '}
+            {primaryBottleneckName.toLowerCase()} is capping your team&apos;s delivery speed. By centralising your pipeline and deploying automated triggers, you can eliminate low-value friction within weeks.
+          </>
+        ),
+      }
+    } else if (growthReadinessScore < 75) {
+      return {
+        tierPill: '📈 Scale-Ready Acceleration Stage',
+        heading: (
+          <>
+            Your Systems Are Primed for <em>Compounding Scale</em>
+          </>
+        ),
+        text: (
+          <>
+            With <strong>{teamObj.label}</strong> active in <strong>{chosenIndustryLabel}</strong>, your business has strong baseline discipline. Connecting your remaining manual steps into automated Make/Zapier pipelines will enable double the output without adding payroll.
+          </>
+        ),
+      }
+    } else {
+      return {
+        tierPill: '🚀 High-Velocity Automation Tier',
+        heading: (
+          <>
+            Your Business Is Ready for <em>Autonomous Operations</em>
+          </>
+        ),
+        text: (
+          <>
+            Your operational maturity in <strong>{chosenIndustryLabel}</strong> is ahead of industry peers. The next strategic frontier is deploying intelligent multi-touch workflow orchestration and predictive pipeline management to dominate market share.
+          </>
+        ),
+      }
+    }
+  }
+
+  const diagnosis = getAuditDiagnosis()
+
+  // Pre-filled WhatsApp direct booking link
   const waMessage = encodeURIComponent(
     `Hi Trenton & Diamaco Team! 👋 I just completed the AI Growth & Automation Audit for ${
       formData.company || 'my business'
     } (${chosenIndustryLabel}).\n\n` +
       `📊 Our Results:\n` +
       `• Growth Readiness Score: ${growthReadinessScore}%\n` +
+      `• Diagnosis: ${diagnosis.tierPill.replace(/[^\w\s-]/g, '').trim()}\n` +
       `• Potential Hours Saved: approx. ${weeklyHoursRange} hrs/week\n` +
       `• Projected Value: approx. ${monthlyValueRange} per month (${annualValueRange} p.a.)\n` +
       `• Key Bottlenecks: ${selectedBottlenecks.map((id) => BOTTLENECKS.find((b) => b.id === id)?.label).join(', ')}\n\n` +
@@ -376,6 +474,7 @@ export default function GrowthAudit() {
             .join(' | '),
           tech_stack: STACKS.find((s) => s.id === stack)?.label || '',
           growth_readiness_score: `${growthReadinessScore}%`,
+          audit_tier: diagnosis.tierPill,
           recoverable_hours_per_week: weeklyHoursRange,
           projected_value_per_month_zar: monthlyValueRange,
           projected_value_per_annum_zar: annualValueRange,
@@ -919,16 +1018,13 @@ export default function GrowthAudit() {
 
                 <div className={styles.headerDetails}>
                   <div className={styles.tierPill}>
-                    {weeklyHoursHigh >= 20 ? 'High Automation Yield Zone' : 'Strong Quick-Win Potential'}
+                    {diagnosis.tierPill}
                   </div>
                   <h3 className={styles.resultsHeading}>
-                    Your Business Has Significant <em>Uncaptured Capacity</em>
+                    {diagnosis.heading}
                   </h3>
                   <p className={styles.resultsText}>
-                    Based on your profile in <strong>{chosenIndustryLabel}</strong> with{' '}
-                    <strong>{teamObj.label}</strong>, your operations are absorbing substantial manual overhead.
-                    By centralising your pipeline and deploying automated triggers, you can eliminate low-value
-                    friction within weeks.
+                    {diagnosis.text}
                   </p>
                 </div>
               </div>
