@@ -23,6 +23,7 @@ const CAT_IMAGES = {
 const categories = ['All', 'Automation', 'Marketing', 'Strategy', 'Compliance', 'Sales']
 
 function PostCard({ post, onOpen }) {
+  const cardImage = post.image || CAT_IMAGES[post.cat] || imgAutomation
   return (
     <div
       className={`${styles.card} blog-card`}
@@ -40,8 +41,8 @@ function PostCard({ post, onOpen }) {
     >
       <div className={styles.cardImg}>
         <img
-          src={CAT_IMAGES[post.cat] || imgAutomation}
-          alt={post.cat}
+          src={cardImage}
+          alt={post.title}
           className={styles.cardImgPhoto}
         />
         <div className={styles.cardImgOverlay} />
@@ -95,7 +96,9 @@ export default function Blog() {
     '@type': 'BlogPosting',
     'headline': selectedPost.title,
     'description': selectedPost.excerpt,
-    'image': 'https://www.diamacogrowth.co.za/og-image.jpg',
+    'image': selectedPost.image
+      ? `https://www.diamacogrowth.co.za${selectedPost.image}`
+      : 'https://www.diamacogrowth.co.za/og-image.jpg',
     'datePublished': '2025-09-01T08:00:00+02:00',
     'dateModified': '2026-10-12T08:00:00+02:00',
     'author': {
@@ -128,6 +131,11 @@ export default function Blog() {
           selectedPost
             ? selectedPost.excerpt
             : "Actionable insights on scaling South African businesses, automating operations, optimizing CRM sales pipelines, and commercial compliance."
+        }
+        ogImage={
+          selectedPost && selectedPost.image
+            ? `https://www.diamacogrowth.co.za${selectedPost.image}`
+            : undefined
         }
         keywords="business insights south africa, sme growth tips, automation workflows guide, tender readiness guide, b-bbee compliance advice"
         canonical={

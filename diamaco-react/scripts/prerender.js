@@ -112,7 +112,7 @@ BLOG_POSTS.forEach(post => {
     title: `${post.title} | Diamaco Growth Insights`,
     description: post.excerpt,
     canonical: `${SITE_URL}/blog/${post.slug}`,
-    ogImage: `${SITE_URL}/og-image.jpg`,
+    ogImage: post.image ? `${SITE_URL}${post.image}` : `${SITE_URL}/og-image.jpg`,
     breadcrumbs: [
       { name: 'Home', url: `${SITE_URL}/` },
       { name: 'Growth Insights', url: `${SITE_URL}/blog` },

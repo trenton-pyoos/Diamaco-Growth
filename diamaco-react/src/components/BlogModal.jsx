@@ -59,6 +59,13 @@ export default function BlogModal({ post, onClose, onSelectPost, allPosts = [] }
             <span>{post.read} read</span>
           </div>
 
+          {/* Article Hero Image */}
+          {post.image && (
+            <div className={styles.heroImgWrap}>
+              <img src={post.image} alt={post.title} className={styles.heroImg} />
+            </div>
+          )}
+
           {/* Key Takeaways */}
           {post.takeaways && post.takeaways.length > 0 && (
             <div className={styles.takeawaysBox}>
