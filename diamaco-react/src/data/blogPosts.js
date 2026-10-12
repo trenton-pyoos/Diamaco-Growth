@@ -133,6 +133,7 @@ Ensure your WhatsApp architecture includes:
     date: 'Sep 2026',
     read: '7 min',
     featured: false,
+    excerpt: 'Clear operational signs your business has outgrown Excel, and the exact step-by-step roadmap to migrate to a CRM without losing client history or disrupting sales.',
     serviceSlug: 'crm-setup',
     serviceName: 'CRM Setup & Training',
     serviceCta: {
@@ -245,6 +246,7 @@ For specialized service providers, management consultants, and industrial suppli
     date: 'Aug 2026',
     read: '6 min',
     featured: false,
+    excerpt: 'Why the gap between closing a verbal deal and collecting the deposit kills SME cash flow, and how automated onboarding retains client excitement and trust.',
     serviceSlug: 'workflow-automation',
     serviceName: 'Sales & Onboarding Systems',
     serviceCta: {
@@ -293,6 +295,7 @@ If drafting an agreement requires 4 days, followed by printing, scanning, and ch
     date: 'Aug 2026',
     read: '8 min',
     featured: false,
+    excerpt: 'Why pretty brochure websites generate zero enquiries, and the exact structural framework South African companies need to turn visitors into phone calls and WhatsApp leads.',
     serviceSlug: 'website-development',
     serviceName: 'Business Website Development',
     serviceCta: {
@@ -343,6 +346,7 @@ Modern web architecture demands clean, modern code, responsive image optimizatio
     date: 'Jul 2026',
     read: '8 min',
     featured: false,
+    excerpt: 'The exact ranking signals and review strategies that position South African service companies at the top of Google Maps for high-intent commercial searches.',
     serviceSlug: 'local-seo',
     serviceName: 'SEO & Local Search',
     serviceCta: {
@@ -392,6 +396,7 @@ Three days after project completion or milestone sign-off, trigger an automated 
     date: 'Jul 2026',
     read: '7 min',
     featured: false,
+    excerpt: 'How boutique agencies, consultants, and specialised firms turn practical case studies and strategic breakdowns into million-Rand enterprise contracts.',
     serviceSlug: 'digital-marketing',
     serviceName: 'Digital Marketing & Content',
     serviceCta: {
@@ -437,6 +442,7 @@ Before inviting your firm to tender or pitch, decision-makers will scrutinize yo
     date: 'Jun 2026',
     read: '8 min',
     featured: false,
+    excerpt: 'How to diversify your income structure, build recurring monthly retainer revenue, and eliminate single-client risk in volatile economic markets.',
     serviceSlug: 'business-strategy',
     serviceName: 'Business Development Strategy',
     serviceCta: {
@@ -488,6 +494,7 @@ Structure retainers around:
     date: 'May 2026',
     read: '6 min',
     featured: false,
+    excerpt: 'The single most important commercial exercise any entrepreneur can execute to eliminate scope creep, protect cash flow, and command premium fees.',
     serviceSlug: 'business-strategy',
     serviceName: 'Business Development Strategy',
     serviceCta: {
@@ -589,6 +596,7 @@ Structure your proposal to mirror their evaluation matrix word for word. Use the
     date: 'Apr 2026',
     read: '9 min',
     featured: false,
+    excerpt: 'A practical guide to CIPC registration, SARS Tax Compliance Status, B-BBEE sworn affidavits, and passing enterprise vendor onboarding audits in South Africa.',
     serviceSlug: 'commercial-setup',
     serviceName: 'Commercial Setup Guidance',
     serviceCta: {
