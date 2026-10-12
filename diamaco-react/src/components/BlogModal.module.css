@@ -278,6 +278,121 @@
   justify-content: center;
 }
 
+/* ── Interactive Audit Banner ── */
+.auditBanner {
+  background: linear-gradient(135deg, rgba(204, 34, 34, 0.14) 0%, rgba(13, 15, 20, 0.95) 100%);
+  border: 1px solid rgba(204, 34, 34, 0.38);
+  border-radius: 10px;
+  padding: 24px 28px;
+  margin: 34px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  box-shadow: 0 12px 36px rgba(204, 34, 34, 0.08);
+}
+
+.auditBannerContent {
+  flex: 1;
+  min-width: 280px;
+}
+
+.auditBadge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ff4d4d;
+  background: rgba(204, 34, 34, 0.2);
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.auditTitle {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 4px 0 6px;
+  line-height: 1.35;
+}
+
+.auditDesc {
+  font-size: 0.88rem;
+  color: #c4cad4;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.auditActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ── Contextual Service Box ── */
+.serviceBox {
+  background: #141720;
+  border: 1px solid #252a36;
+  border-left: 3px solid #CC2222;
+  border-radius: 8px;
+  padding: 26px 28px;
+  margin: 36px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.serviceHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.serviceBadge {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #8b95a5;
+  font-weight: 600;
+}
+
+.serviceTag {
+  font-size: 0.74rem;
+  color: #ff5555;
+  background: rgba(204, 34, 34, 0.15);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+}
+
+.serviceTitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 4px 0 2px;
+}
+
+.serviceDesc {
+  font-size: 0.9rem;
+  color: #abb3c4;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.serviceActions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
 /* ── Mobile ── */
 @media (max-width: 768px) {
   .backdrop { padding: 12px; }
@@ -285,4 +400,11 @@
   .topBar { padding: 14px 20px; }
   .scrollArea { padding: 28px 20px; }
   .ctaCard { padding: 24px 16px; }
+  .auditBanner { padding: 20px; flex-direction: column; align-items: flex-start; }
+  .auditActions { width: 100%; }
+  .auditActions .btn { width: 100%; text-align: center; }
+  .serviceBox { padding: 20px; }
+  .serviceActions { flex-direction: column; width: 100%; }
+  .serviceActions .btn { width: 100%; text-align: center; }
 }
+

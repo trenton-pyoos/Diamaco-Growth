@@ -76,6 +76,22 @@ export default function BlogModal({ post, onClose, onSelectPost, allPosts = [] }
             </div>
           )}
 
+          {/* Interactive Free Growth Audit Banner */}
+          <div className={styles.auditBanner}>
+            <div className={styles.auditBannerContent}>
+              <span className={styles.auditBadge}>⚡ 2-Minute Diagnostic · Free Audit</span>
+              <h3 className={styles.auditTitle}>Calculate Your Business's Recoverable Admin Hours</h3>
+              <p className={styles.auditDesc}>
+                Discover exactly where your operations are leaking revenue and time. Receive an instant, personalized automation roadmap for your South African business.
+              </p>
+            </div>
+            <div className={styles.auditActions}>
+              <Link to="/audit" className="btn btn--primary" onClick={onClose}>
+                <span>Launch Free Audit →</span>
+              </Link>
+            </div>
+          </div>
+
           {/* Article Sections */}
           {post.sections &&
             post.sections.map((sec, idx) => (
@@ -84,6 +100,33 @@ export default function BlogModal({ post, onClose, onSelectPost, allPosts = [] }
                 <div className={styles.sectionContent}>{sec.content}</div>
               </div>
             ))}
+
+          {/* Contextual Service Callout */}
+          {post.serviceCta && (
+            <div className={styles.serviceBox}>
+              <div className={styles.serviceHeader}>
+                <span className={styles.serviceBadge}>Diamaco Implementation Service</span>
+                <span className={styles.serviceTag}>{post.serviceName || post.cat}</span>
+              </div>
+              <h3 className={styles.serviceTitle}>{post.serviceCta.heading}</h3>
+              <p className={styles.serviceDesc}>{post.serviceCta.desc}</p>
+              <div className={styles.serviceActions}>
+                <Link to={post.serviceCta.link || '/services'} className="btn btn--primary" onClick={onClose}>
+                  <span>{post.serviceCta.btnText || 'Explore Service'} →</span>
+                </Link>
+                <a
+                  href={`https://wa.me/27833270056?text=${encodeURIComponent(
+                    `Hi Trenton, I read your article "${post.title}" and would like to discuss ${post.serviceName || post.cat} for my business.`
+                  )}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn--ghost"
+                >
+                  <span>Chat on WhatsApp (083 327 0056)</span>
+                </a>
+              </div>
+            </div>
+          )}
 
           {/* Summary Box */}
           {post.summary && (
@@ -139,13 +182,16 @@ export default function BlogModal({ post, onClose, onSelectPost, allPosts = [] }
               <Link to="/contact" className="btn btn--primary" onClick={onClose}>
                 <span>Book a Free Strategy Session</span>
               </Link>
+              <Link to="/audit" className="btn btn--secondary" onClick={onClose}>
+                <span>Take 2-Min Growth Audit</span>
+              </Link>
               <a
                 href={`https://wa.me/27833270056?text=${whatsappMessage}`}
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn--ghost"
               >
-                <span>Chat on WhatsApp (083 327 0056)</span>
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>

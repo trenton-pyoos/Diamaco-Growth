@@ -1,42 +1,210 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd
+        http://www.google.com/schemas/sitemap-image/1.1
+        http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
+
+  <!-- Core Landing Pages & Sitelinks Targets -->
   <url>
     <loc>https://www.diamacogrowth.co.za/</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>Diamaco Growth | South Africa Business Automation &amp; Marketing</image:title>
+    </image:image>
   </url>
+
   <url>
     <loc>https://www.diamacogrowth.co.za/services</loc>
-    <lastmod>2026-09-30</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>Diamaco Growth Business Automation &amp; CRM Services</image:title>
+    </image:image>
   </url>
-  <url>
-    <loc>https://www.diamacogrowth.co.za/about</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.diamacogrowth.co.za/blog</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.diamacogrowth.co.za/contact</loc>
-    <lastmod>2026-10-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
+
   <url>
     <loc>https://www.diamacogrowth.co.za/audit</loc>
-    <lastmod>2026-10-05</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>Free AI Business Growth &amp; Automation Audit</image:title>
+    </image:image>
   </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/about</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/about-partner.jpg</image:loc>
+      <image:title>About Diamaco Growth Team and Mission</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/contact</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>Contact Diamaco Growth Consultations</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>Diamaco Growth Insights &amp; Playbooks</image:title>
+    </image:image>
+  </url>
+
+  <!-- Knowledge Hub / Flagship Blog Articles -->
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/automate-workflows-2026</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/automate-workflows.jpg</image:loc>
+      <image:title>5 Workflows Every South African Business Should Automate in 2026</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/whatsapp-business-automation-guide</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/whatsapp-marketing.jpg</image:loc>
+      <image:title>WhatsApp Business Automation: How South African Companies Close Deals 24/7</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/crm-vs-spreadsheets-migration</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/crm-spreadsheets.jpg</image:loc>
+      <image:title>CRM vs. Spreadsheets: The 2026 Small Business Migration Blueprint</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/b2b-lead-generation-south-africa</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/lead-pipeline.jpg</image:loc>
+      <image:title>B2B Lead Generation in South Africa: Building a Predictable Outbound Pipeline</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/digital-client-onboarding-systems</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>Digital Client Onboarding: How Fast Contract &amp; Billing Systems Protect Deal Velocity</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/high-converting-website-blueprint</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>The Anatomy of a High-Converting SME Website: Why Most Sites Fail to Generate Leads</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/local-seo-google-maps-2026</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/local-seo-maps.jpg</image:loc>
+      <image:title>Local SEO Mastery: How to Rank in the Google Maps 3-Pack Across South Africa</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/content-marketing-corporate-clients</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/og-image.jpg</image:loc>
+      <image:title>Content &amp; Authority Marketing: How South African B2B Founders Win Corporate Deals</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/building-revenue-streams-retainers</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/recurring-retainers.jpg</image:loc>
+      <image:title>The Three Revenue Pillars: How to Escape the Project-to-Project Cash Flow Trap</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/ideal-client-profile-strategy</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/ideal-client.jpg</image:loc>
+      <image:title>The High-Profit ICP: Why Saying No to Bad-Fit Clients Doubles Your Net Margins</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/government-tender-checklist-2026</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/tender-checklist.jpg</image:loc>
+      <image:title>The 2026 South African Tender Checklist: How to Pass Phase 1 Compliance Every Time</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://www.diamacogrowth.co.za/blog/commercial-setup-sars-bbee-guide</loc>
+    <lastmod>2026-10-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <image:image>
+      <image:loc>https://www.diamacogrowth.co.za/blog/bbee-transformation.jpg</image:loc>
+      <image:title>Commercial Setup &amp; B-BBEE in Plain English: From CIPC to Corporate Vendor Status</image:title>
+    </image:image>
+  </url>
+
 </urlset>

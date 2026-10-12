@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams, useParams, useNavigate } from 'react-router-dom'
 import ScrollReveal from '../components/ScrollReveal'
 import SEO from '../components/SEO'
 import BlogModal from '../components/BlogModal'
@@ -62,29 +62,59 @@ function PostCard({ post, onOpen }) {
 
 export default function Blog() {
   const [active, setActive] = useState('All')
-  const [selectedPost, setSelectedPost] = useState(null)
-  const [searchParams, setSearchParams] = useSearchParams()
+  const [searchParams] = useSearchParams()
+  const { slug } = useParams()
+  const navigate = useNavigate()
 
-  // Sync with URL query parameter ?article=slug
+  const articleSlug = slug || searchParams.get('article')
+  const selectedPost = articleSlug
+    ? BLOG_POSTS.find(
+        (p) => p.slug === articleSlug || p.id === articleSlug || (p.aliases && p.aliases.includes(articleSlug))
+      ) || null
+    : null
+
+  // Canonicalize URL if opened via alias
   useEffect(() => {
-    const articleSlug = searchParams.get('article')
-    if (articleSlug) {
-      const match = BLOG_POSTS.find((p) => p.slug === articleSlug || p.id === articleSlug)
-      if (match) setSelectedPost(match)
+    if (selectedPost && slug && selectedPost.slug !== slug) {
+      navigate(`/blog/${selectedPost.slug}`, { replace: true })
     }
-  }, [searchParams])
+  }, [selectedPost, slug, navigate])
 
   const handleOpenPost = (post) => {
-    setSelectedPost(post)
-    setSearchParams({ article: post.slug })
+    navigate(`/blog/${post.slug}`)
   }
 
   const handleClosePost = () => {
-    setSelectedPost(null)
-    setSearchParams({})
+    navigate('/blog')
   }
 
   const filtered = BLOG_POSTS.filter((p) => active === 'All' || p.cat === active)
+
+  const postSchema = selectedPost ? {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    'headline': selectedPost.title,
+    'description': selectedPost.excerpt,
+    'image': 'https://www.diamacogrowth.co.za/og-image.jpg',
+    'datePublished': '2025-09-01T08:00:00+02:00',
+    'dateModified': '2026-10-12T08:00:00+02:00',
+    'author': {
+      '@type': 'Organization',
+      'name': 'Diamaco Growth'
+    },
+    'publisher': {
+      '@type': 'Organization',
+      'name': 'Diamaco Growth',
+      'logo': {
+        '@type': 'ImageObject',
+        'url': 'https://www.diamacogrowth.co.za/logo.png'
+      }
+    },
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': `https://www.diamacogrowth.co.za/blog/${selectedPost.slug}`
+    }
+  } : null
 
   return (
     <>
@@ -100,7 +130,12 @@ export default function Blog() {
             : "Actionable insights on scaling South African businesses, automating operations, optimizing CRM sales pipelines, and commercial compliance."
         }
         keywords="business insights south africa, sme growth tips, automation workflows guide, tender readiness guide, b-bbee compliance advice"
-        canonical="https://www.diamacogrowth.co.za/blog"
+        canonical={
+          selectedPost
+            ? `https://www.diamacogrowth.co.za/blog/${selectedPost.slug}`
+            : "https://www.diamacogrowth.co.za/blog"
+        }
+        schema={postSchema}
       />
       <section className="page-hero">
         <div className="page-hero__bg" />

@@ -36,8 +36,8 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/audit" element={<Audit />} />
         <Route path="/ai-audit" element={<Audit />} />
-        <Route path="/growth-audit" element={<Audit />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<Blog />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
